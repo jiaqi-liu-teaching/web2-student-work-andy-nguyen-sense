@@ -1,0 +1,738 @@
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+body {
+    background-color: #FFFFFF;
+    animation: fadeInPage 0.8s ease-in-out;
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: 1rem;
+    color: #2F00FF;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* --- Type Styling --- */
+
+h1 {
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 200 ;
+    font-size: clamp(4rem, 20vw, 25rem);
+    color: #2F00FF;
+}
+
+h2 {
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: clamp(2rem, 7vw, 7rem);
+    color: #888888;
+}
+
+h3 {
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 200 ;
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: #000000;
+}
+
+p {
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #2F00FF;
+}
+
+main {
+    padding-top: 7rem;
+    flex: 1;
+}
+
+body.homepage main {
+    padding-top: 0;
+}
+
+body.sight-page main {
+    padding-top: 0;
+}
+
+body.statement-page main {
+    padding-top: 0;
+}
+
+/* --- Header --- */
+header {
+    --header-height: 5rem;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2F00FF;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header img {
+    width: clamp(60px, 10vw, 100px);
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #FFFFFF;
+    transition: transform 0.8s ease-in-out;
+}
+
+header img:hover {
+    transform: rotate(360deg);
+}
+
+/* Hamburger Menu (Hidden by default) */
+.hamburger-menu {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 0;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.scaling-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 7rem);
+}
+
+body.homepage .scaling-container {
+    height: 100vh;
+}
+
+/* --- Header Dropdown Menu --- */
+details {
+    position: relative;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2F00FF;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    visibility: hidden;
+}
+
+.dropdown-content a {
+    padding: 0.5rem 1rem;
+    display: block;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+/* --- Hero Section --- */
+
+.sense-type-hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    perspective: 800px; 
+}
+
+.sense-type-hero h1 {
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 100 ;
+    font-size: clamp(2rem, 5vw, 5rem);
+    color: #FFFFFF;
+    pointer-events: auto;
+    cursor: default;
+    transform-style: preserve-3d; 
+}
+
+.sense-video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sense-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* --- Sight Section --- */
+
+.sight-section {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%) translateZ(100px);
+    width: 100%;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 1 !important;
+}
+
+.sight-section h1 {
+    font-size: clamp(10rem, 18vw, 20rem);
+    margin: 0;
+}
+
+.sight-section h2, .sight-section h3 {
+    margin: 0.5rem 0;
+}
+
+.sight-section h2 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.sight-section h3 {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.sight-section-img {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    height: auto;
+}
+
+.sight-album-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.sight-img-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.sight-img-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sight-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Sound Section --- */
+
+.sound-section-img {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    height: auto;
+    min-height: 300px;
+    align-items: flex-end;
+    width: 100%;
+    perspective: 800px;
+    margin-top: 2rem;
+}
+
+.sound-section-img .sight-album-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.sound-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.sound-section h1, .sound-section h2, .sound-section h3 {
+    margin: 0;
+}
+
+.sound-section h1 {
+    white-space: nowrap;
+}
+
+/* --- Smell Section --- */
+
+.smell-section-img .sight-album-container a {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.smell-section-img .sight-album-container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.smell-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.smell-section h1, .smell-section h2, .smell-section h3 {
+    margin: 0;
+}
+
+.smell-section-img {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    height: auto;
+    margin-top: 4rem;
+}
+
+/* --- Taste Section --- */
+
+.taste-section-img {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    gap: 3rem;
+    height: auto;
+}
+
+.taste-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.taste-section h1, .taste-section h2, .taste-section h3 {
+    margin: 0;
+}
+
+.taste-section-img .sight-album-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Touch Section --- */
+.touch-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.touch-section h1, .touch-section h2, .touch-section h3 {
+    margin: 0;
+}
+
+.touch-section-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    width: min(600px, 80vw);
+    margin: 4rem auto;
+}
+
+.touch-section-img .sight-album-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.touch-section-img .sight-album-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.touch-section-img .sight-album-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.touch-section-img .sight-album-container p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 0, 255, 0.9);
+    color: #FFFFFF;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
+    pointer-events: none;
+
+    
+}
+
+.touch-section-img .sight-album-container:hover p {
+    opacity: 1;
+}
+
+/* --- Artists --- */
+
+#artists {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    margin-top: 3rem;
+}
+
+.artist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* --- Statement Section --- */
+.statement-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.statement-section h1 {
+    align-items: center;
+    justify-content: center;
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 200 ;
+    font-size: clamp(1rem, 5vw, 3rem);
+    color: #2F00FF;
+}
+
+/* --- Statement Journey Animation --- */
+#statement-journey-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.sense-word {
+    position: absolute;
+    width: clamp(200px, 40vw, 600px);
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.world-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+    transform-origin: center center;
+}
+
+.layer-sight {
+    background-color: #000000;
+    /* Kaleidoscope / Aperture effect */
+    background-image: conic-gradient(from 0deg at 50% 50%, #000000 0deg, #2F00FF 45deg, #000000 90deg, #2F00FF 135deg, #000000 180deg, #2F00FF 225deg, #000000 270deg, #2F00FF 315deg);
+    opacity: 1; /* Start visible */
+}
+
+.layer-sound {
+    background-color: #000000;
+    /* Audio wave simulation */
+    background-image: repeating-linear-gradient(90deg, #000000, #000000 20px, #2F00FF 20px, #2F00FF 22px);
+    opacity: 0;
+}
+
+.layer-smell {
+    background-color: #000000;
+    /* Diffusion / Mist */
+    background-image: radial-gradient(circle at 50% 50%, #2F00FF 0%, transparent 60%);
+    filter: blur(50px);
+    opacity: 0;
+}
+
+.layer-taste {
+    background-color: #000000;
+    /* Taste buds / Organic pattern */
+    background-image: radial-gradient(#2F00FF 2px, transparent 2px);
+    background-size: 30px 30px;
+    opacity: 0;
+}
+
+.layer-touch {
+    background-color: #000000;
+    /* Grid / Texture */
+    background-image: linear-gradient(rgba(47, 0, 255, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(47, 0, 255, 0.4) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0;
+}
+
+.statement-final-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2F00FF;
+    opacity: 0;
+    background: #FFFFFF;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.statement-final-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 1rem;
+    font-weight: 200;
+}
+
+.statement-final-content p {
+    max-width: 800px;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.statement-albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 1000px;
+    opacity: 0; /* Controlled by GSAP */
+}
+
+.statement-albums-grid a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.statement-albums-grid a:hover {
+    transform: scale(1.08);
+}
+
+.statement-albums-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.statement-section h1, .statement-section h2, .statement-section h3 {
+    margin: 0;
+}
+
+/* --- Footer --- */
+footer {
+    position: relative;
+    z-index: 10;
+    background-color: #2F00FF;
+    color: #FFFFFF;
+    text-align: center;     
+    padding: 1rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'nunito sans', sans-serif;
+    font-weight: 400 ;
+    font-size: 1rem;
+    color: #FFFFFF;
+
+}
+
+/* --- Hover Animations --- */
+.sight-album-container a,
+.artist-container a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sight-album-container a:hover,
+.artist-container a:hover {
+    transform: scale(1.05);
+}
+
+
+.sonic-bar {
+    box-shadow: 0 0 15px rgba(47, 0, 255, 0.3);
+    filter: brightness(1.2);
+}
+
+#scent-trail {
+  filter: blur(2px);
+}
+
+#scent-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking through the scent */
+  z-index: 9999;
+}
+
+.molecule {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.4); /* Change color based on "scent" */
+  border-radius: 50%;
+  filter: blur(4px);
+}

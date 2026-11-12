@@ -1,0 +1,65 @@
+/* --- Tablet Layout (601px - 999px) --- */
+
+/* General Layout Adjustments */
+main {
+    padding-top: 6rem;
+}
+
+.sight-section,
+.sound-section,
+.smell-section,
+.taste-section,
+.touch-section,
+.statement-section {
+    width: 80%;
+    max-width: 90vw;
+}
+
+/* Album Containers - Flex Wrap for Tablet */
+.sight-section-img,
+.sound-section-img,
+.smell-section-img,
+.taste-section-img {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    height: auto;
+    padding-top: 3rem;
+}
+
+.sight-album-container {
+    width: 40%; /* 2 items per row */
+}
+
+/* Touch Section Grid */
+.touch-section-img {
+    width: 70vw;
+}
+
+/* Statement Albums */
+.statement-albums-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* Artists Grid */
+.artists-grid {
+    gap: 2rem;
+}
+
+/* Header */
+nav ul {
+    gap: 2.5rem;
+}
+
+body.statement-page main {
+    padding-top: 0;
+}
+
+#statement-journey-wrapper {
+    height: 100vh;
+}
+
+.statement-final-content {
+    padding-top: 8rem;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <head>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        
+        <meta charset="UTF-8">
+        <meta name="author" content="Andy Nguyen">
+        <meta name="description" content="Abstract Music Catalog Page">
+        <title>sense</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 999px)" href="styles/tablet.css"> 
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="styles/mobile.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo.svg" alt="logo" >
+    </head>
+
+    <body class="sight-page">
+
+        <header>
+            <a href="index.html"><img src="images/logo.svg" alt="logo" ></a>
+            <nav>
+                <ul>
+                    <!-- Collection Navigation -->
+                    <li>
+                        <details>
+                            <summary>Collection</summary>
+                            <div class="dropdown-content">
+                                <a href="sight.html">Sight</a>
+                                <a href="sound.html">Sound</a>
+                                <a href="smell.html">Smell</a>
+                                <a href="taste.html">Taste</a>
+                                <a href="touch.html">Touch</a>
+                            </div>
+                        </details>
+                    </li>
+
+                    <!-- About Navigation -->
+                    <li>
+                        <details>
+                            <summary>About</summary>
+                            <div class="dropdown-content">
+                                <a href="artists.html">Artists</a>
+                                <a href="statement.html">Statement</a>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+<!-- Sight Section -->
+            <section id="sight">
+                <div class="sight-section">
+                    <h1>sight</h1>
+                    <div class="sight h2">
+                    <h2>/sīt/</h2>
+                    </div>
+                    <h3>The faculty or power of seeing.</h3>
+                </div>
+
+                <div class="sight-section-img">
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/3zKXeD35Qw9HV3FvNs3oAn?si=7_0Mf1R6TdC-nmDwOwxkVg" target="_blank" class="sight-img-wrapper">
+                            <img src="images/haonoah.jpg" alt="Haonoah Albumn Cover"> 
+                        </a>
+                            <p>haonoah</p>  
+                    </div>
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/0P9J5KQksLJqjdwBlqVUP6?si=UVwI3Il2SuSxwBbq3zcfZQ" target="_blank" class="sight-img-wrapper">
+                            <img src="images/life-is-once.jpg" alt="Life Is Once Albumn Cover">
+                        </a>
+                            <p>life is once</p>
+                    </div>
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/1BjSEUWIHzkOMumRhxBJHZ?si=BXluGdJCSNSxcgfi_-NCWg" target="_blank" class="sight-img-wrapper">
+                            <img src="images/h1ghr-bluetape.jpg" alt="H1GHR Blue Tape Albumn Cover">
+                        </a>
+                        <p>h1ghr blue tape</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; 2026 Sense. All rights reserved.</p>
+        </footer>
+
+        <!-- GSAP Library -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <!-- Custom Script -->
+        <script src="script.js"></script>
+    </body>
+</html>

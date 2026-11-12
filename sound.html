@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <head>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        
+        <meta charset="UTF-8">
+        <meta name="author" content="Andy Nguyen">
+        <meta name="description" content="Abstract Music Catalog Page">
+        <title>sense</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 999px)" href="styles/tablet.css"> 
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="styles/mobile.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo.svg" alt="logo" >
+    </head>
+
+    <body>
+
+        <header>
+            <a href="index.html"><img src="images/logo.svg" alt="logo" ></a>
+            <nav>
+                <ul>
+                    <!-- Collection Navigation -->
+                    <li>
+                        <details>
+                            <summary>Collection</summary>
+                            <div class="dropdown-content">
+                                <a href="sight.html">Sight</a>
+                                <a href="sound.html">Sound</a>
+                                <a href="smell.html">Smell</a>
+                                <a href="taste.html">Taste</a>
+                                <a href="touch.html">Touch</a>
+                            </div>
+                        </details>
+                    </li>
+
+                    <!-- About Navigation -->
+                    <li>
+                        <details>
+                            <summary>About</summary>
+                            <div class="dropdown-content">
+                                <a href="artists.html">Artists</a>
+                                <a href="statement.html">Statement</a>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+<!-- Sound Section -->
+            <section id="sound">
+                <div class="sound-section-img">
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/1RJS2olxr73BvtjMG0iNmw?si=RYIiUsLpQa2tFavNx8Jj-w" target="_blank" >
+                            <img src="images/im-just-sein.jpg" alt="I'm Just Sein Albumn Cover">
+                        </a>
+                        <p>i'm just sein</p>
+                    </div>
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/0Hl1JmHKfrerIT1v87HDbs?si=tZDk2mLpQnWH9u7S1aQ-UA" target="_blank" >
+                            <img src="images/whereissein.jpg" alt="Where Is Sein Albumn Cover">
+                        </a>
+                        <p>where is sein</p>
+                    </div>
+                    <div class="sight-album-container">
+                        <a href="https://open.spotify.com/album/1PMTxAkNKDPOB2eNvoiEIz?si=-Y_Howt5S2mVM1KSltMlbQ" target="_blank" >
+                            <img src="images/fivelines.jpg" alt="Five Lines Albumn Cover">
+                        </a>
+                        <p>five lines</p>
+                    </div>
+                </div>
+                
+                <div class="sound-section">
+                    <h1>sound</h1>
+                    <h2>/sound/</h2>
+                    <h3>Vibrations that travel through the air or another medium and can be heard when they reach a person's or animal's ear.</h3>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; 2026 Sense. All rights reserved.</p>
+        </footer>
+
+        <!-- GSAP Library -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <!-- Custom Script -->
+        <script src="script.js"></script>
+    </body>
+</html>
